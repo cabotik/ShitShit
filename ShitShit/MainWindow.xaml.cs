@@ -25,15 +25,11 @@ namespace ShitShit
         public MainWindow()
         {
             InitializeComponent();
-            Ghost ghost = new Ghost();
-            ghost.Health = 60;
-            ghost.Happy = 100;
-            ghost.Food = 100;
-            ghost.Sleep = 90;
-            tbFoodPercent.Text = $"{Convert.ToString(ghost.Food)}%";
-            tbHappyPercent.Text = $"{Convert.ToString(ghost.Happy)}%";
-            tbHealthPercent.Text = $"{Convert.ToString(ghost.Health)}%";
-            tbSleepPercent.Text = $"{Convert.ToString(ghost.Sleep)}%";
+            Ghost ghost = new Ghost();           
+            tbFoodPercent.Text = $"{Convert.ToString(ghost.FoodReturn())}%";
+            tbHappyPercent.Text = $"{Convert.ToString(ghost.HappyReturn())}%";
+            tbHealthPercent.Text = $"{Convert.ToString(ghost.HealthReturn())}%";
+            tbSleepPercent.Text = $"{Convert.ToString(ghost.SleepReturn())}%";
             TimerCallback tm = new TimerCallback(ReducingParametersTimer);
             Timer timer = new Timer(tm, 0, 0, 2000);
             
@@ -53,9 +49,6 @@ namespace ShitShit
             ghost.Sleep = ghost.Sleep - 10;
             return ghost.Sleep;
         }
-
-
-
         private void btnFood_Click(object sender, RoutedEventArgs e)
         {
 
@@ -63,55 +56,12 @@ namespace ShitShit
 
         private void btnSleep_Click(object sender, RoutedEventArgs e)
         {
-            Sleep();
+           
         }
-        private int Sleep()
-        {
-            spBlack.Visibility = Visibility.Visible;
-            spSleep.Visibility = Visibility.Visible;
-            spNormal.Visibility = Visibility.Hidden;
-            TimerCallback tm = new TimerCallback(IncreaseSleep);
-            Timer timer = new Timer(tm, 0, 0, 15000);
-            Ghost ghost = new Ghost();
-            if (ghost.Sleep >= 100)
-            {
-                timer.Dispose();
-                spBlack.Visibility = Visibility.Hidden;
-                spSleep.Visibility = Visibility.Hidden;
-                spNormal.Visibility = Visibility.Visible;
-            }
-            if(ghost.Sleep < 100)
-            {
-                while (ghost.Sleep >= 100)
-                {
-                    ghost.Sleep = ghost.Sleep + 10;
-                }
-                
-            }
-            return ghost.Sleep;
-        }
-        private void IncreaseSleep(object obj)
-        {
-            Ghost ghost = new Ghost();
-            if(ghost.Sleep <100)
-            { ghost.Sleep = ghost.Sleep + 10; }
-            return;
-        }
-
         private void btnHealth_Click(object sender, RoutedEventArgs e)
         {
-            Health();
+            
         }
-        private int Health()
-        {
-            Ghost ghost = new Ghost();
-            if (ghost.Health < 100)
-            {
-                ghost.Health = ghost.Health + 10;
-            }
-            return ghost.Health;
-        }
-
         private void btnHappy_Click(object sender, RoutedEventArgs e)
         {
 
