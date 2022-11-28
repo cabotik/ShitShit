@@ -5,8 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShitShit.ToolsForms"
         mc:Ignorable="d"
-        Title="ChooseGameWindow" Height="450" Width="800">
+        Title="Choose Game" MinHeight="200" MinWidth="400" MaxHeight="200" MaxWidth="400">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Margin="5" Name="btnPlayWithBouns" Background="White" BorderThickness="0" Click="btnPlayWithBouns_Click">
+                <StackPanel>
+                    <Image Source="/MyImages/bones_icon.png" Height="50" Width="50"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Margin="5" Name="btnPlayWithRats" Background="White" BorderThickness="0" Click="btnPlayWithRats_Click">
+                <StackPanel>
+                    <Image Source="/MyImages/rats_icon.png" Height="50" Width="50"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Margin="5" Name="btnPlayWithPerson" Background="White" BorderThickness="0" Click="btnPlayWithPerson_Click">
+                <StackPanel>
+                    <Image Source="/MyImages/person_icon.png" Height="50" Width="50"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Play with bones +30"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Play with rats +30"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Play with person +30"/>
+        </StackPanel>
     </Grid>
 </Window>

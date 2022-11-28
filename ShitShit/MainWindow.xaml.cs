@@ -25,16 +25,18 @@ namespace ShitShit
         public MainWindow()
         {
             InitializeComponent();
-            Ghost ghost = new Ghost();           
+            TimerCallback tm = new TimerCallback(ReducingParametersTimer);
+            Timer timer = new Timer(tm, 0, 0, 2000);
+            
+        }
+        public void PersentReturn()
+        {
+            Ghost ghost = new Ghost();
             tbFoodPercent.Text = $"{Convert.ToString(ghost.FoodReturn())}%";
             tbHappyPercent.Text = $"{Convert.ToString(ghost.HappyReturn())}%";
             tbHealthPercent.Text = $"{Convert.ToString(ghost.HealthReturn())}%";
             tbSleepPercent.Text = $"{Convert.ToString(ghost.SleepReturn())}%";
-            TimerCallback tm = new TimerCallback(ReducingParametersTimer);
-            Timer timer = new Timer(tm, 0, 0, 2000);
-            
-        }      
-
+        }
         private void ReducingParametersTimer(object obj)
         {
             ReducingParameters();
@@ -51,25 +53,34 @@ namespace ShitShit
         }
         private void btnFood_Click(object sender, RoutedEventArgs e)
         {
-
+            Ghost ghost = new Ghost();
+            CheckParametrs(ghost.FoodReturn());
+            ToolsForms.ChooseFoodWindow chooseFoodWindow = new ToolsForms.ChooseFoodWindow();
+            chooseFoodWindow.Show();
         }
 
         private void btnSleep_Click(object sender, RoutedEventArgs e)
         {
-           
+            
         }
         private void btnHealth_Click(object sender, RoutedEventArgs e)
         {
-            
+            Ghost ghost = new Ghost();
+            CheckParametrs(ghost.HealthReturn());
+            ghost.Healthing();
         }
         private void btnHappy_Click(object sender, RoutedEventArgs e)
         {
-
+            Ghost ghost = new Ghost();
+            CheckParametrs(ghost.HappyReturn());
+            ToolsForms.ChooseGameWindow chooseGameWindow = new ToolsForms.ChooseGameWindow();
+            chooseGameWindow.Show();
         }
 
         private void btnGames_Click(object sender, RoutedEventArgs e)
         {
-
+            ToolsForms.GamesWindow gamesWindow = new ToolsForms.GamesWindow();
+            gamesWindow.Show();
         }
 
         private void btnAddName_Click(object sender, RoutedEventArgs e)
@@ -79,6 +90,13 @@ namespace ShitShit
             tbGhostName.Text = Name;
             spName.Visibility = Visibility.Hidden;
 
+        }
+        private void CheckParametrs(int i)
+        {
+            if (i <100)
+            { return; }
+            if (i >= 100)
+            { MessageBox.Show("Limit!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning); }
         }
     }
 }

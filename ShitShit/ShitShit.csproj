@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <None Remove="MyImages\black.png" />
+    <None Remove="MyImages\bones_icon.png" />
+    <None Remove="MyImages\fear_icon.png" />
     <None Remove="MyImages\food_icon.png" />
     <None Remove="MyImages\game_icon.png" />
     <None Remove="MyImages\grave_icon.png" />
@@ -15,13 +17,24 @@
     <None Remove="MyImages\happy_icon.png" />
     <None Remove="MyImages\health_icon.png" />
     <None Remove="MyImages\normalghost_icon.png" />
+    <None Remove="MyImages\person_icon.png" />
+    <None Remove="MyImages\pills_icon.png" />
+    <None Remove="MyImages\ratsoul_icon.png" />
+    <None Remove="MyImages\rats_icon.png" />
     <None Remove="MyImages\sadghost_icon.png" />
     <None Remove="MyImages\sleep_icon.png" />
+    <None Remove="MyImages\soul_icon.png" />
     <None Remove="MyImages\veryhappyghost_icon.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="MyImages\black.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\bones_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\fear_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\food_icon.png">
@@ -45,10 +58,25 @@
     <Resource Include="MyImages\normalghost_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="MyImages\person_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\pills_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\ratsoul_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\rats_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="MyImages\sadghost_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\sleep_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\soul_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\veryhappyghost_icon.png">

@@ -15,9 +15,7 @@ namespace ShitShit
         public int Happy = 100;
 
         public int Healthing()
-        { return Health = Health + 50; }
-        public int Sleeping()
-        { return Sleep = Sleep + 50; }
+        { return Health = Health + 50; }        
         public int EatFear()
         { return Food = Food + 10; }
         public int EatPersonsSoul()
@@ -26,9 +24,9 @@ namespace ShitShit
         { return Food = Food + 20; }
         public int PlayWithPerson()
         { return Happy = Happy + 30; }
-        public int PlayWirhRats()
+        public int PlayWithRats()
         { return Happy = Happy + 20; }
-        public int PlayWithBouns()
+        public int PlayWithBones()
         { return Happy = Happy + 10; }
 
         public int FoodReturn()

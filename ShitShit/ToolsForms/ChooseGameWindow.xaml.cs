@@ -23,5 +23,29 @@ namespace ShitShit.ToolsForms
         {
             InitializeComponent();
         }
+
+        private void btnPlayWithBouns_Click(object sender, RoutedEventArgs e)
+        {
+            Ghost ghost = new Ghost();
+            ghost.PlayWithBones();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.PersentReturn();
+        }
+
+        private void btnPlayWithRats_Click(object sender, RoutedEventArgs e)
+        {
+            Ghost ghost = new Ghost();
+            ghost.PlayWithRats();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.PersentReturn();
+        }
+
+        private void btnPlayWithPerson_Click(object sender, RoutedEventArgs e)
+        {
+            Ghost ghost = new Ghost();
+            ghost.PlayWithPerson();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.PersentReturn();
+        }
     }
 }
