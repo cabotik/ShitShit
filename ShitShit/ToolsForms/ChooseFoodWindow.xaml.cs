@@ -19,6 +19,7 @@ namespace ShitShit.ToolsForms
     /// </summary>
     public partial class ChooseFoodWindow : Window
     {
+        Ghost ghost = new Ghost();
         public ChooseFoodWindow()
         {
             InitializeComponent();
@@ -26,26 +27,20 @@ namespace ShitShit.ToolsForms
 
         private void btnEatFear_Click(object sender, RoutedEventArgs e)
         {
-            Ghost ghost = new Ghost();
             ghost.EatFear();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.PersentReturn();
+            Close();
         }
 
         private void btnEatRatSoul_Click(object sender, RoutedEventArgs e)
         {
-            Ghost ghost = new Ghost();
             ghost.EatRatsSoul();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.PersentReturn();
+            Close();
         }
 
         private void btnEatSoul_Click(object sender, RoutedEventArgs e)
         {
-            Ghost ghost = new Ghost();
             ghost.EatPersonsSoul();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.PersentReturn();
+            Close();
         }
     }
 }

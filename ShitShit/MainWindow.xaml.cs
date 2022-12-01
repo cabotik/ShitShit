@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace ShitShit
 {
@@ -21,42 +22,44 @@ namespace ShitShit
     /// </summary>
     public partial class MainWindow : Window
     {
+        Ghost ghost = new Ghost();
 
         public MainWindow()
-        {
+        {        
             InitializeComponent();
-            TimerCallback tm = new TimerCallback(ReducingParametersTimer);
-            Timer timer = new Timer(tm, 0, 0, 2000);
-            
+            PersentReturn();
+            ghost.TimerForChangeParameters();
+            TimarForViewParametrs();
         }
+        private void TimarForViewParametrs()
+        {
+            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 120000);///120 000
+            dispatcherTimer.Start();
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            PersentReturn();
+        }
+
         public void PersentReturn()
         {
-            Ghost ghost = new Ghost();
             tbFoodPercent.Text = $"{Convert.ToString(ghost.FoodReturn())}%";
             tbHappyPercent.Text = $"{Convert.ToString(ghost.HappyReturn())}%";
             tbHealthPercent.Text = $"{Convert.ToString(ghost.HealthReturn())}%";
             tbSleepPercent.Text = $"{Convert.ToString(ghost.SleepReturn())}%";
         }
-        private void ReducingParametersTimer(object obj)
-        {
-            ReducingParameters();
-        }
-        private int ReducingParameters()
-        {
 
-            Ghost ghost = new Ghost();
-            ghost.Food = ghost.Food - 10;
-            ghost.Happy = ghost.Happy - 10;
-            ghost.Health = ghost.Health - 5;
-            ghost.Sleep = ghost.Sleep - 10;
-            return ghost.Sleep;
-        }
         private void btnFood_Click(object sender, RoutedEventArgs e)
         {
-            Ghost ghost = new Ghost();
-            CheckParametrs(ghost.FoodReturn());
-            ToolsForms.ChooseFoodWindow chooseFoodWindow = new ToolsForms.ChooseFoodWindow();
-            chooseFoodWindow.Show();
+            if (ghost.FoodReturn() < 90)
+            {
+                ToolsForms.ChooseFoodWindow chooseFoodWindow = new ToolsForms.ChooseFoodWindow();
+                chooseFoodWindow.Show();
+            }
+            else { MessageBox.Show("Ghost is not hungry!", "Message", MessageBoxButton.OK, MessageBoxImage.Information); }
         }
 
         private void btnSleep_Click(object sender, RoutedEventArgs e)
@@ -65,16 +68,22 @@ namespace ShitShit
         }
         private void btnHealth_Click(object sender, RoutedEventArgs e)
         {
-            Ghost ghost = new Ghost();
-            CheckParametrs(ghost.HealthReturn());
-            ghost.Healthing();
+            if (ghost.HealthReturn() < 90)
+            { 
+                ghost.Healthing();
+                MessageBox.Show("Ghost is healed!", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else { MessageBox.Show("Ghost is healthy!", "Message", MessageBoxButton.OK, MessageBoxImage.Information); }
         }
         private void btnHappy_Click(object sender, RoutedEventArgs e)
         {
-            Ghost ghost = new Ghost();
-            CheckParametrs(ghost.HappyReturn());
-            ToolsForms.ChooseGameWindow chooseGameWindow = new ToolsForms.ChooseGameWindow();
-            chooseGameWindow.Show();
+
+            if (ghost.HappyReturn() < 90)
+            {
+                ToolsForms.ChooseGameWindow chooseGameWindow = new ToolsForms.ChooseGameWindow();
+                chooseGameWindow.Show();
+            }
+            else { MessageBox.Show("Ghost is already happy!", "Message", MessageBoxButton.OK, MessageBoxImage.Information); }
         }
 
         private void btnGames_Click(object sender, RoutedEventArgs e)
@@ -86,17 +95,16 @@ namespace ShitShit
         private void btnAddName_Click(object sender, RoutedEventArgs e)
         {
             Ghost ghostName = new Ghost();
-            Name = tbAddGhostName.Text;
-            tbGhostName.Text = Name;
-            spName.Visibility = Visibility.Hidden;
-
-        }
-        private void CheckParametrs(int i)
-        {
-            if (i <100)
-            { return; }
-            if (i >= 100)
-            { MessageBox.Show("Limit!", "Message", MessageBoxButton.OK, MessageBoxImage.Warning); }
+            try
+            {
+                Name = tbAddGhostName.Text;
+                tbGhostName.Text = Name;
+                spName.Visibility = Visibility.Hidden;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace ShitShit
 {
@@ -37,9 +38,19 @@ namespace ShitShit
         { return Sleep; }
         public int HappyReturn()
         { return Happy;}
-
-
-
-
+        public void TimerForChangeParameters()
+        {
+            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 120000); ///120 000
+            dispatcherTimer.Start();
+        }
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            Food = Food - 10;
+            Happy = Happy - 10;
+            Health = Health - 5;
+            Sleep = Sleep - 10;
+        }
     }
 }
