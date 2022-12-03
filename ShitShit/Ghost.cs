@@ -10,19 +10,21 @@ namespace ShitShit
     public class Ghost
     {
         public string Name { get; set; }
-        public int Food = 100;
-        public int Sleep = 100;
-        public int Health = 100;
-        public int Happy = 100;
+        public int Food = 30;
+        public int Sleep = 40;
+        public int Health = 30;
+        public int Happy = 40;
 
         public int Healthing()
-        { return Health = Health + 50; }        
+        { return Health = Health + 50; }   
+        
         public int EatFear()
-        { return Food = Food + 10; }
+        {  return Food = Food + 10; }
         public int EatPersonsSoul()
         { return Food = Food + 30; }
         public int EatRatsSoul()
         { return Food = Food + 20; }
+
         public int PlayWithPerson()
         { return Happy = Happy + 30; }
         public int PlayWithRats()
@@ -42,7 +44,7 @@ namespace ShitShit
         {
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 120000); ///120 000
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 60000); ///120 000
             dispatcherTimer.Start();
         }
         private void dispatcherTimer_Tick(object sender, EventArgs e)

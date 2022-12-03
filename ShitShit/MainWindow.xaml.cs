@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -23,20 +24,25 @@ namespace ShitShit
     public partial class MainWindow : Window
     {
         Ghost ghost = new Ghost();
+        DispatcherTimer dispatcherTimerVP = new DispatcherTimer();
+        private bool IsToggle;
 
         public MainWindow()
         {        
             InitializeComponent();
+           
+            var uri = new Uri("/MyImages/happyghost_icon.png", UriKind.Relative);
+            imageGhost.Source = new BitmapImage(uri);
             PersentReturn();
             ghost.TimerForChangeParameters();
             TimarForViewParametrs();
         }
         private void TimarForViewParametrs()
         {
-            DispatcherTimer dispatcherTimer = new DispatcherTimer();
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 120000);///120 000
-            dispatcherTimer.Start();
+           
+            dispatcherTimerVP.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimerVP.Interval = new TimeSpan(0, 0, 0, 0, 8000);
+            dispatcherTimerVP.Start();
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
@@ -56,21 +62,40 @@ namespace ShitShit
         {
             if (ghost.FoodReturn() < 90)
             {
-                ToolsForms.ChooseFoodWindow chooseFoodWindow = new ToolsForms.ChooseFoodWindow();
-                chooseFoodWindow.Show();
+                spFoodChoose.Visibility = Visibility.Visible;
             }
             else { MessageBox.Show("Ghost is not hungry!", "Message", MessageBoxButton.OK, MessageBoxImage.Information); }
         }
 
         private void btnSleep_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (ghost.SleepReturn() < 90)
+            {
+                var uriOne = new Uri("/MyImages/sleepghost.png", UriKind.Relative);
+                imageGhost.Source = new BitmapImage(uriOne);
+                dispatcherTimerVP.Stop();
+                for (int i = 10; i > 0; i--)
+                {
+                    ghost.Sleep = 100;
+                    Thread.Sleep(1000);
+                }
+                var uri = new Uri("/MyImages/happyghost_icon.png", UriKind.Relative);
+                imageGhost.Source = new BitmapImage(uri);
+                PersentReturn();
+                dispatcherTimerVP.Start();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Ghost doesn't want to sleep!", "Message", MessageBoxButton.OK, MessageBoxImage.Information); 
+            }           
         }
         private void btnHealth_Click(object sender, RoutedEventArgs e)
         {
             if (ghost.HealthReturn() < 90)
             { 
                 ghost.Healthing();
+                PersentReturn();
                 MessageBox.Show("Ghost is healed!", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else { MessageBox.Show("Ghost is healthy!", "Message", MessageBoxButton.OK, MessageBoxImage.Information); }
@@ -80,8 +105,7 @@ namespace ShitShit
 
             if (ghost.HappyReturn() < 90)
             {
-                ToolsForms.ChooseGameWindow chooseGameWindow = new ToolsForms.ChooseGameWindow();
-                chooseGameWindow.Show();
+               spGameChoose.Visibility = Visibility.Visible;
             }
             else { MessageBox.Show("Ghost is already happy!", "Message", MessageBoxButton.OK, MessageBoxImage.Information); }
         }
@@ -105,6 +129,48 @@ namespace ShitShit
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void btnEatFear_Click(object sender, RoutedEventArgs e)
+        {
+            ghost.EatFear();
+            PersentReturn();
+            spFoodChoose.Visibility = Visibility.Hidden;
+        }
+
+        private void btnEatRatSoul_Click(object sender, RoutedEventArgs e)
+        {
+            ghost.EatRatsSoul();
+            PersentReturn();
+            spFoodChoose.Visibility = Visibility.Hidden;
+        }
+
+        private void btnEatSoul_Click(object sender, RoutedEventArgs e)
+        {
+            ghost.EatRatsSoul();
+            PersentReturn();
+            spFoodChoose.Visibility = Visibility.Hidden;
+        }
+
+        private void btnPlayWithBouns_Click(object sender, RoutedEventArgs e)
+        {
+            ghost.PlayWithBones();
+            PersentReturn();
+            spGameChoose.Visibility = Visibility.Hidden;
+        }
+
+        private void btnPlayWithRats_Click(object sender, RoutedEventArgs e)
+        {
+            ghost.PlayWithRats();
+            PersentReturn();
+            spGameChoose.Visibility = Visibility.Hidden;
+        }
+
+        private void btnPlayWithPerson_Click(object sender, RoutedEventArgs e)
+        {
+            ghost.PlayWithPerson();
+            PersentReturn();
+            spGameChoose.Visibility = Visibility.Hidden;
         }
     }
 }

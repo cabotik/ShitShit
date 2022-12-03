@@ -16,9 +16,10 @@
             <RowDefinition Height="100"/>
             <RowDefinition/>
             <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Margin="5" Name="btnFood" Background="White" Click="btnFood_Click" BorderThickness="0">
                 <StackPanel>
                     <Image Source="/MyImages/food_icon.png" Height="50" Width="50"/>
@@ -44,7 +45,93 @@
             </Button>
             <TextBlock Margin="5" Name="tbHappyPercent" Width="30"/>
         </StackPanel>
-        <StackPanel  Orientation="Horizontal" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Row="2" Grid.Column="1" Name="spFoodChoose" Visibility="Hidden">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel  Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Margin="5" Name="btnEatFear" Background="White" BorderThickness="0" Click="btnEatFear_Click">
+                        <StackPanel>
+                            <Image Source="/MyImages/fear_icon.png" Height="50" Width="50"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel  Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <Button Margin="5" Name="btnEatRatSoul" Background="White" BorderThickness="0" Click="btnEatRatSoul_Click">
+                        <StackPanel>
+                            <Image Source="/MyImages/ratsoul_icon.png" Height="50" Width="50"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Margin="5" Name="btnEatSoul" Background="White" BorderThickness="0" Click="btnEatSoul_Click">
+                        <StackPanel>
+                            <Image Source="/MyImages/soul_icon.png" Height="50" Width="50"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel  Grid.Row="1" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Label Margin="5" Content="Fear +10"/>
+                </StackPanel>
+                <StackPanel  Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Label Margin="5" Content="Rat soul +20"/>
+                </StackPanel>
+                <StackPanel  Grid.Row="1" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Label Margin="5" Content="Soul +30"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <StackPanel Name="spGameChoose" Grid.Row="2" Grid.Column="1" Visibility="Hidden">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Margin="5" Name="btnPlayWithBouns" Background="White" BorderThickness="0" Click="btnPlayWithBouns_Click">
+                        <StackPanel>
+                            <Image Source="/MyImages/bones_icon.png" Height="50" Width="50"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Margin="5" Name="btnPlayWithRats" Background="White" BorderThickness="0" Click="btnPlayWithRats_Click">
+                        <StackPanel>
+                            <Image Source="/MyImages/rats_icon.png" Height="50" Width="50"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Margin="5" Name="btnPlayWithPerson" Background="White" BorderThickness="0" Click="btnPlayWithPerson_Click">
+                        <StackPanel>
+                            <Image Source="/MyImages/person_icon.png" Height="50" Width="50"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Play with bones +30"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Play with rats +30"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Play with person +30"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <StackPanel  Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Margin="5" Name="btnGames" Background="White" Click="btnGames_Click" BorderThickness="0">
                 <StackPanel>
                     <Image Source="/MyImages/game_icon.png" Height="50" Width="50"/>
@@ -58,14 +145,8 @@
         <StackPanel  Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Margin="5" Width="100" Name="tbGhostName" VerticalAlignment="Bottom"/>
         </StackPanel>
-        <StackPanel Name="spBlack" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
-            <Image Name="imageBlack" Source="/MyImages/black.png" Width="900" Height="600" Opacity="0.5"/>
-        </StackPanel>
-        <StackPanel Name="spSleep" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
-            <Image Name="ImageGhostSleep" Source="/MyImages/sleepghost.png" Width="300" Height="300" />
-        </StackPanel>
         <StackPanel Name="spNormal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
-            <Image Name="ImageGhost" Source="/MyImages/happyghost_icon.png" Width="300" Height="300" Margin="10" />
+            <Image Name="imageGhost" Width="300" Height="300" Margin="10" />
         </StackPanel>
     </Grid>
 </Window>
