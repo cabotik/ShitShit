@@ -11,9 +11,9 @@ namespace ShitShit
     {
         public string Name { get; set; }
         public int Food = 10;
-        public int Sleep = 100;
-        public int Health = 100;
-        public int Happy = 100;
+        public int Sleep = 50;
+        public int Health = 30;
+        public int Happy = 30;
         public int EatFear()
         {  return Food = Food + 10; }
         public int EatPersonsSoul()

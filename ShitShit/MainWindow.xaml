@@ -45,7 +45,10 @@
             </Button>
             <TextBlock Margin="5" Name="tbHappyPercent" Width="30"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="1" Name="spFoodChoose" Visibility="Hidden">
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+            <ProgressBar Name="pbSleep" Width="200" Height="30"  Minimum="0" Maximum="10"/>
+        </StackPanel> 
+            <StackPanel Grid.Row="2" Grid.Column="1" Name="spFoodChoose" Visibility="Hidden">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>

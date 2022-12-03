@@ -33,13 +33,13 @@ namespace ShitShit
             GhostCheck();
             PersentReturn();
             ghost.TimerForChangeParameters();
-            TimarForViewParametrs();
+            
         }
-        private void TimarForViewParametrs()
+        private void TimarForChangeghostPic()
         {
-           
+
             dispatcherTimerVP.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimerVP.Interval = new TimeSpan(0, 0, 0, 0, 8000);
+            dispatcherTimerVP.Interval = new TimeSpan(0, 0, 0, 0, 1000);
             dispatcherTimerVP.Start();
         }
         private void GhostCheck()
@@ -63,7 +63,8 @@ namespace ShitShit
         }
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            PersentReturn();
+            var uriVeryHappy = new Uri("/MyImages/veryhappyghost_icon.png", UriKind.Relative);
+            imageGhost.Source = new BitmapImage(uriVeryHappy);
         }
 
         public void PersentReturn()
@@ -85,27 +86,28 @@ namespace ShitShit
 
         private void btnSleep_Click(object sender, RoutedEventArgs e)
         {
+
             if (ghost.SleepReturn() < 90)
             {
                 var uriOne = new Uri("/MyImages/sleepghost.png", UriKind.Relative);
                 imageGhost.Source = new BitmapImage(uriOne);
-                dispatcherTimerVP.Stop();
+                pbSleep.Visibility = Visibility.Visible;
                 for (int i = 10; i > 0; i--)
                 {
+                    pbSleep.Value++;
                     ghost.Sleep = 100;
                     Thread.Sleep(1000);
                 }
-                var uri = new Uri("/MyImages/happyghost_icon.png", UriKind.Relative);
-                imageGhost.Source = new BitmapImage(uri);
+                pbSleep.Visibility = Visibility.Hidden;
+                GhostCheck();
                 PersentReturn();
-                dispatcherTimerVP.Start();
                 return;
             }
             else
             {
                 MessageBox.Show("Ghost doesn't want to sleep!", "Message", MessageBoxButton.OK, MessageBoxImage.Information); 
             }           
-        }
+        }       
         private void btnHealth_Click(object sender, RoutedEventArgs e)
         {
             if (ghost.HealthReturn() < 90)
