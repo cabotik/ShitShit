@@ -30,9 +30,7 @@ namespace ShitShit
         public MainWindow()
         {        
             InitializeComponent();
-           
-            var uri = new Uri("/MyImages/happyghost_icon.png", UriKind.Relative);
-            imageGhost.Source = new BitmapImage(uri);
+            GhostCheck();
             PersentReturn();
             ghost.TimerForChangeParameters();
             TimarForViewParametrs();
@@ -44,7 +42,25 @@ namespace ShitShit
             dispatcherTimerVP.Interval = new TimeSpan(0, 0, 0, 0, 8000);
             dispatcherTimerVP.Start();
         }
+        private void GhostCheck()
+        {
+            if (ghost.Health >= 60 || ghost.Food >= 60 || ghost.Happy >= 60 || ghost.Sleep >= 60)
+            {
+                var uriHappy = new Uri("/MyImages/happyghost_icon.png", UriKind.Relative);
+                imageGhost.Source = new BitmapImage(uriHappy);
+            }
+            if (ghost.Health <= 20 || ghost.Food <= 20 || ghost.Happy <= 20 || ghost.Sleep <= 20)
+            {
+                var uriSad = new Uri("/MyImages/sadghost_icon.png", UriKind.Relative);
+                imageGhost.Source = new BitmapImage(uriSad);
+            }
+            if ( ghost.Health <= 50 && ghost.Health >= 30|| ghost.Food <= 50 && ghost.Food >= 30 || ghost.Happy <= 50 && ghost.Happy >= 30 || ghost.Sleep <= 50 && ghost.Sleep >= 30)
+            {
+                var uriNormal = new Uri("/MyImages/normalghost_icon.png", UriKind.Relative);
+                imageGhost.Source = new BitmapImage(uriNormal);
+            }
 
+        }
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             PersentReturn();
@@ -93,8 +109,8 @@ namespace ShitShit
         private void btnHealth_Click(object sender, RoutedEventArgs e)
         {
             if (ghost.HealthReturn() < 90)
-            { 
-                ghost.Healthing();
+            {
+                ghost.Health = 100;
                 PersentReturn();
                 MessageBox.Show("Ghost is healed!", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
             }
@@ -135,6 +151,7 @@ namespace ShitShit
         {
             ghost.EatFear();
             PersentReturn();
+            GhostCheck();
             spFoodChoose.Visibility = Visibility.Hidden;
         }
 
@@ -142,6 +159,7 @@ namespace ShitShit
         {
             ghost.EatRatsSoul();
             PersentReturn();
+            GhostCheck();
             spFoodChoose.Visibility = Visibility.Hidden;
         }
 
@@ -149,6 +167,7 @@ namespace ShitShit
         {
             ghost.EatRatsSoul();
             PersentReturn();
+            GhostCheck();
             spFoodChoose.Visibility = Visibility.Hidden;
         }
 
@@ -156,6 +175,7 @@ namespace ShitShit
         {
             ghost.PlayWithBones();
             PersentReturn();
+            GhostCheck();
             spGameChoose.Visibility = Visibility.Hidden;
         }
 
@@ -163,6 +183,7 @@ namespace ShitShit
         {
             ghost.PlayWithRats();
             PersentReturn();
+            GhostCheck();
             spGameChoose.Visibility = Visibility.Hidden;
         }
 
@@ -170,6 +191,7 @@ namespace ShitShit
         {
             ghost.PlayWithPerson();
             PersentReturn();
+            GhostCheck();
             spGameChoose.Visibility = Visibility.Hidden;
         }
     }
