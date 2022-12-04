@@ -35,5 +35,12 @@ namespace ShitShit.ToolsForms
         {
             Close();    
         }
+
+        private void btnGameFP_Click(object sender, RoutedEventArgs e)
+        {
+            Games.FlappyGhostGame flappyGhostGame = new Games.FlappyGhostGame();
+            flappyGhostGame.Show();
+            Close();
+        }
     }
 }

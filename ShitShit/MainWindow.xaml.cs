@@ -25,13 +25,15 @@ namespace ShitShit
     {
         Ghost ghost = new Ghost();
         DispatcherTimer dispatcherTimerVP = new DispatcherTimer();
-        private bool IsToggle;
+
 
         public MainWindow()
         {        
             InitializeComponent();
             GhostCheck();
             PersentReturn();
+            var uriCandleOn = new Uri("/MyImages/candleskull_icon.png", UriKind.Relative);
+            imageCandle.Source = new BitmapImage(uriCandleOn);
             ghost.TimerForChangeParameters();
             
         }
@@ -86,8 +88,11 @@ namespace ShitShit
 
         private void btnSleep_Click(object sender, RoutedEventArgs e)
         {
+           
             if (ghost.SleepReturn() < 90)
             {
+                var uriCandleOff = new Uri("/MyImages/candleskulloff_icon.png", UriKind.Relative);
+                imageCandle.Source = new BitmapImage(uriCandleOff);
                 var uriOne = new Uri("/MyImages/sleepghost.png", UriKind.Relative);
                 imageGhost.Source = new BitmapImage(uriOne);
                 pbSleep.Visibility = Visibility.Visible;
@@ -98,6 +103,8 @@ namespace ShitShit
                     Thread.Sleep(1000);
                 }
                 pbSleep.Visibility = Visibility.Hidden;
+                var uriCandleOn = new Uri("/MyImages/candleskull_icon.png", UriKind.Relative);
+                imageCandle.Source = new BitmapImage(uriCandleOn);
                 GhostCheck();
                 PersentReturn();
                 return;

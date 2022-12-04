@@ -4,13 +4,19 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>veryhappyghost_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="MyImages\back_icon.png" />
     <None Remove="MyImages\black.png" />
     <None Remove="MyImages\bones_icon.png" />
+    <None Remove="MyImages\candleskulloff_icon.png" />
+    <None Remove="MyImages\candleskull_icon.png" />
+    <None Remove="MyImages\column_icon.png" />
     <None Remove="MyImages\fear_icon.png" />
+    <None Remove="MyImages\flappyGameBG.png" />
+    <None Remove="MyImages\flappyghostgame_icon.png" />
     <None Remove="MyImages\food_icon.png" />
     <None Remove="MyImages\game_icon.png" />
     <None Remove="MyImages\grave_icon.png" />
@@ -34,6 +40,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="veryhappyghost_icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="MyImages\back_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -43,7 +53,22 @@
     <Resource Include="MyImages\bones_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="MyImages\candleskulloff_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\candleskull_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\column_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="MyImages\fear_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\flappyGameBG.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\flappyghostgame_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\food_icon.png">

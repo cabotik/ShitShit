@@ -1,0 +1,25 @@
+﻿<Window x:Class="ShitShit.Games.FlappyGhostGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShitShit.Games"
+        mc:Ignorable="d"
+        Title="Flappy Ghost Game" MinHeight="490" MinWidth="525" MaxHeight="490" MaxWidth="525">
+    <Canvas Name="cvFlappyGhost" Focusable="True" KeyDown="cvFlappyGhost_KeyDown" KeyUp="cvFlappyGhost_KeyUp">
+        <Canvas.Background>
+            <ImageBrush ImageSource="/MyImages/flappyGameBG.png" />
+        </Canvas.Background>
+        <Image Width="135" Height="266" Source="/MyImages/column_icon.png" Tag="obs1" Canvas.Left="75" Canvas.Top="270"/>
+        <Image Width="135" Height="266" Source="/MyImages/column_icon.png" Tag="obs1" Canvas.Left="75" Canvas.Top="-150"/>
+
+        <Image Width="135" Height="266" Source="/MyImages/column_icon.png" Tag="obs2" Canvas.Left="225" Canvas.Top="320"/>
+        <Image Width="135" Height="266" Source="/MyImages/column_icon.png" Tag="obs2" Canvas.Left="225" Canvas.Top="-100"/>
+
+        <Image Width="135" Height="266" Source="/MyImages/column_icon.png" Tag="obs3" Canvas.Left="375" Canvas.Top="220"/>
+        <Image Width="135" Height="266" Source="/MyImages/column_icon.png" Tag="obs3" Canvas.Left="375" Canvas.Top="-200"/>
+
+        <Image Name="imageFlappyGhost" Height="50" Width="50" Stretch="Fill" Canvas.Top="190" Canvas.Left="10" Source="/MyImages/veryhappyghost_icon.png"/>
+        <TextBlock Margin="5" FontSize="15" Name="tbScore"  Foreground="White"/>
+    </Canvas>
+</Window>

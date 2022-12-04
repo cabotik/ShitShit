@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShitShit.ToolsForms"
         mc:Ignorable="d"
+        Icon="/MyImages/game_icon.png"
         Title="Games Window" MinHeight="300" MinWidth="600" MaxHeight="300" MaxWidth="600">
     <Grid>
         <Grid.RowDefinitions>
@@ -12,9 +13,14 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Name="btnGameRPS" Margin="5" Background="White" Click="btnGameRPS_Click" BorderThickness="0">
+            <Button Name="btnGameRPS" Margin="10" Background="White" Click="btnGameRPS_Click" BorderThickness="0">
                 <StackPanel>
                     <Image Height="60" Width="60" Source="/MyImages/rockPaperScissors_icon.png"/>
+                </StackPanel>
+            </Button>
+            <Button Name="btnGameFP" Margin="10" Background="White" Click="btnGameFP_Click"  BorderThickness="0">
+                <StackPanel>
+                    <Image Height="60" Width="60" Source="/MyImages/flappyghostgame_icon.png"/>
                 </StackPanel>
             </Button>
         </StackPanel>

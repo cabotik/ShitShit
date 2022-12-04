@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShitShit.Games"
         mc:Ignorable="d"
+        Icon="/MyImages/rockPaperScissors_icon.png"
         Title="Rock Paper Scissors Game" MinHeight="500" MinWidth="500" MaxHeight="500" MaxWidth="500">
     <Grid>
         <Grid.ColumnDefinitions>
