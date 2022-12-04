@@ -9,11 +9,16 @@
 
   <ItemGroup>
     <None Remove="MyImages\back_icon.png" />
+    <None Remove="MyImages\basket_icon.png" />
     <None Remove="MyImages\black.png" />
+    <None Remove="MyImages\bonesOne_icon.png" />
+    <None Remove="MyImages\bonesTwo_icon.png" />
     <None Remove="MyImages\bones_icon.png" />
     <None Remove="MyImages\candleskulloff_icon.png" />
     <None Remove="MyImages\candleskull_icon.png" />
+    <None Remove="MyImages\catchbonesgame_icon.png" />
     <None Remove="MyImages\column_icon.png" />
+    <None Remove="MyImages\cowskull_icon.png" />
     <None Remove="MyImages\fear_icon.png" />
     <None Remove="MyImages\flappyGameBG.png" />
     <None Remove="MyImages\flappyghostgame_icon.png" />
@@ -24,6 +29,7 @@
     <None Remove="MyImages\happyghost_icon.png" />
     <None Remove="MyImages\happy_icon.png" />
     <None Remove="MyImages\health_icon.png" />
+    <None Remove="MyImages\leftbasket_icon.png" />
     <None Remove="MyImages\normalghost_icon.png" />
     <None Remove="MyImages\paper_icon.png" />
     <None Remove="MyImages\person_icon.png" />
@@ -31,10 +37,13 @@
     <None Remove="MyImages\ratsoul_icon.png" />
     <None Remove="MyImages\rats_icon.png" />
     <None Remove="MyImages\refreash_icon.png" />
+    <None Remove="MyImages\rightbasket_icon.png" />
     <None Remove="MyImages\rockPaperScissors_icon.png" />
     <None Remove="MyImages\rock_icon.png" />
     <None Remove="MyImages\sadghost_icon.png" />
     <None Remove="MyImages\scissors_icon.png" />
+    <None Remove="MyImages\skull_icon.png" />
+    <None Remove="MyImages\sleepghost.png" />
     <None Remove="MyImages\sleep_icon.png" />
     <None Remove="MyImages\soul_icon.png" />
     <None Remove="MyImages\veryhappyghost_icon.png" />
@@ -48,7 +57,16 @@
     <Resource Include="MyImages\back_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="MyImages\basket_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="MyImages\black.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\bonesOne_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\bonesTwo_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\bones_icon.png">
@@ -60,7 +78,13 @@
     <Resource Include="MyImages\candleskull_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="MyImages\catchbonesgame_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="MyImages\column_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\cowskull_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\fear_icon.png">
@@ -93,6 +117,9 @@
     <Resource Include="MyImages\health_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="MyImages\leftbasket_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="MyImages\normalghost_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -114,6 +141,9 @@
     <Resource Include="MyImages\refreash_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="MyImages\rightbasket_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="MyImages\rockPaperScissors_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -124,6 +154,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\scissors_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\skull_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\sleepghost.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\sleep_icon.png">

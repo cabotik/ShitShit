@@ -42,5 +42,12 @@ namespace ShitShit.ToolsForms
             flappyGhostGame.Show();
             Close();
         }
+
+        private void btnGameCP_Click(object sender, RoutedEventArgs e)
+        {
+            Games.CatchBonesGame catchBonesGame = new Games.CatchBonesGame();   
+            catchBonesGame.Show();
+            Close();
+        }
     }
 }

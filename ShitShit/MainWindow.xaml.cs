@@ -37,13 +37,13 @@ namespace ShitShit
             ghost.TimerForChangeParameters();
             
         }
-        private void TimarForChangeghostPic()
-        {
+        //private void TimarForChangeghostPic()
+        //{
 
-            dispatcherTimerVP.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimerVP.Interval = new TimeSpan(0, 0, 0, 0, 1000);
-            dispatcherTimerVP.Start();
-        }
+        //    dispatcherTimerVP.Tick += new EventHandler(dispatcherTimer_Tick);
+        //    dispatcherTimerVP.Interval = new TimeSpan(0, 0, 0, 0, 1000);
+        //    dispatcherTimerVP.Start();
+        //}
         private void GhostCheck()
         {
             if (ghost.Health >= 60 || ghost.Food >= 60 || ghost.Happy >= 60 || ghost.Sleep >= 60)
@@ -63,11 +63,11 @@ namespace ShitShit
             }
 
         }
-        private void dispatcherTimer_Tick(object sender, EventArgs e)
-        {
-            var uriVeryHappy = new Uri("/MyImages/veryhappyghost_icon.png", UriKind.Relative);
-            imageGhost.Source = new BitmapImage(uriVeryHappy);
-        }
+        //private void dispatcherTimer_Tick(object sender, EventArgs e)
+        //{
+        //    var uriVeryHappy = new Uri("/MyImages/veryhappyghost_icon.png", UriKind.Relative);
+        //    imageGhost.Source = new BitmapImage(uriVeryHappy);
+        //}
 
         public void PersentReturn()
         {
@@ -91,18 +91,18 @@ namespace ShitShit
            
             if (ghost.SleepReturn() < 90)
             {
+                spBlack.Visibility = Visibility.Visible;
                 var uriCandleOff = new Uri("/MyImages/candleskulloff_icon.png", UriKind.Relative);
                 imageCandle.Source = new BitmapImage(uriCandleOff);
-                var uriOne = new Uri("/MyImages/sleepghost.png", UriKind.Relative);
-                imageGhost.Source = new BitmapImage(uriOne);
-                pbSleep.Visibility = Visibility.Visible;
+                var uriSleep = new Uri("/MyImages/sleepghost.png", UriKind.Relative);
+                imageGhost.Source = new BitmapImage(uriSleep);
                 for (int i = 10; i > 0; i--)
                 {
                     pbSleep.Value++;
                     ghost.Sleep = 100;
                     Thread.Sleep(1000);
                 }
-                pbSleep.Visibility = Visibility.Hidden;
+                spBlack.Visibility = Visibility.Hidden;
                 var uriCandleOn = new Uri("/MyImages/candleskull_icon.png", UriKind.Relative);
                 imageCandle.Source = new BitmapImage(uriCandleOn);
                 GhostCheck();
@@ -202,5 +202,6 @@ namespace ShitShit
             GhostCheck();
             spGameChoose.Visibility = Visibility.Hidden;
         }
+
     }
 }

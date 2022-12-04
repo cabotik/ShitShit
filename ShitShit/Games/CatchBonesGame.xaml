@@ -1,0 +1,18 @@
+﻿<Window x:Class="ShitShit.Games.CatchBonesGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShitShit.Games"
+        mc:Ignorable="d"
+        Title="Catch Bones Game" MinHeight="700" MinWidth="525" MaxHeight="700" MaxWidth="525">
+    <Canvas Name="cvCatchBones" Focusable="True" MouseMove="cvCatchBones_MouseMove">
+        <Canvas.Background>
+            <ImageBrush ImageSource="/MyImages/flappyGameBG.png"/>
+        </Canvas.Background>
+        <TextBlock Name="tbScore" FontSize="18" Foreground="White"/>
+        <TextBlock Name="tbMissed" FontSize="18" Foreground="White" Canvas.Left="390"/>
+        <Rectangle Name="rPlayer" Width="80" Height="80" Canvas.Left="215" Canvas.Top="590" Fill="PaleVioletRed"/>
+
+    </Canvas>
+</Window>

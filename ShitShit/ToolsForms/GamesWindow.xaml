@@ -15,12 +15,17 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button Name="btnGameRPS" Margin="10" Background="White" Click="btnGameRPS_Click" BorderThickness="0">
                 <StackPanel>
-                    <Image Height="60" Width="60" Source="/MyImages/rockPaperScissors_icon.png"/>
+                    <Image Height="80" Width="80" Source="/MyImages/rockPaperScissors_icon.png"/>
                 </StackPanel>
             </Button>
             <Button Name="btnGameFP" Margin="10" Background="White" Click="btnGameFP_Click"  BorderThickness="0">
                 <StackPanel>
-                    <Image Height="60" Width="60" Source="/MyImages/flappyghostgame_icon.png"/>
+                    <Image Height="80" Width="80" Source="/MyImages/flappyghostgame_icon.png"/>
+                </StackPanel>
+            </Button>
+            <Button Name="btnGameCP" Margin="10" Background="White" Click="btnGameCP_Click"  BorderThickness="0">
+                <StackPanel>
+                    <Image Height="80" Width="80" Source="/MyImages/catchbonesgame_icon.png"/>
                 </StackPanel>
             </Button>
         </StackPanel>
