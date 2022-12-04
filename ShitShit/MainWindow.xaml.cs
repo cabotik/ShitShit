@@ -24,7 +24,7 @@ namespace ShitShit
     public partial class MainWindow : Window
     {
         Ghost ghost = new Ghost();
-        DispatcherTimer dispatcherTimerVP = new DispatcherTimer();
+        //DispatcherTimer dispatcherTimerVP = new DispatcherTimer();
 
 
         public MainWindow()
