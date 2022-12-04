@@ -86,7 +86,6 @@ namespace ShitShit
 
         private void btnSleep_Click(object sender, RoutedEventArgs e)
         {
-
             if (ghost.SleepReturn() < 90)
             {
                 var uriOne = new Uri("/MyImages/sleepghost.png", UriKind.Relative);

@@ -9,6 +9,7 @@ namespace ShitShit
 {
     public class Ghost
     {
+
         public string Name { get; set; }
         public int Food = 10;
         public int Sleep = 50;

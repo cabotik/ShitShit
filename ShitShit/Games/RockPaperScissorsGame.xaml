@@ -12,9 +12,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="80"/>
             <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" Visibility="Visible" Name="spLabel" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Label Margin="5" Content="Choose:"/>
@@ -41,8 +42,27 @@
             <Image Margin="5" Name="imageChoosen"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1" Visibility="Visible" Name="spOpponentChoosen" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Label Margin="5" Content="Your opponent choosen:"/>
+            <Label Margin="5" Content="Opponent choosen:"/>
             <Image Margin="5" Name="imageOpponentChoosen"/>
         </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Margin="5" BorderThickness="0" Background="White" Name="btnBack" Click="btnBack_Click">
+                <StackPanel>
+                    <Image Width="30" Height="40" Source="/MyImages/back_icon.png"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+            <Label Content="Your wins:"/>
+            <TextBlock Width="20" Margin="7" Name="tbWins"/>
+            <Label Content="Your loses:"/>
+            <TextBlock Width="20" Margin="7" Name="tbLoses"/>
+            <Button Margin="5" BorderThickness="0" Background="White" Name="btnRefreash" Click="btnRefreash_Click">
+                <StackPanel>
+                    <Image Width="30" Height="40" Source="/MyImages/refreash_icon.png"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+       
     </Grid>
 </Window>

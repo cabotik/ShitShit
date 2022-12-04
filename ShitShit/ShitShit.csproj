@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="MyImages\back_icon.png" />
     <None Remove="MyImages\black.png" />
     <None Remove="MyImages\bones_icon.png" />
     <None Remove="MyImages\fear_icon.png" />
@@ -22,6 +23,7 @@
     <None Remove="MyImages\pills_icon.png" />
     <None Remove="MyImages\ratsoul_icon.png" />
     <None Remove="MyImages\rats_icon.png" />
+    <None Remove="MyImages\refreash_icon.png" />
     <None Remove="MyImages\rockPaperScissors_icon.png" />
     <None Remove="MyImages\rock_icon.png" />
     <None Remove="MyImages\sadghost_icon.png" />
@@ -32,6 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="MyImages\back_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="MyImages\black.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -75,6 +80,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\rats_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\refreash_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\rockPaperScissors_icon.png">

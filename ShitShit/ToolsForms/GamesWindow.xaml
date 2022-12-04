@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShitShit.ToolsForms"
         mc:Ignorable="d"
-        Title="GamesWindow" Height="450" Width="800">
+        Title="Games Window" MinHeight="300" MinWidth="600" MaxHeight="300" MaxWidth="600">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Name="btnGameRPS" Margin="5" Background="White" Click="btnGameRPS_Click" BorderThickness="0">
+                <StackPanel>
+                    <Image Height="60" Width="60" Source="/MyImages/rockPaperScissors_icon.png"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button Margin="5" BorderThickness="0" Background="White" Name="btnBack" Click="btnBack_Click">
+                <StackPanel>
+                    <Image Width="30" Height="40" Source="/MyImages/back_icon.png"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

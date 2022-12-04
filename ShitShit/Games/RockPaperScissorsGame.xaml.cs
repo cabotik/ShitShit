@@ -19,18 +19,21 @@ namespace ShitShit.Games
     /// </summary>
     public partial class RockPaperScissorsGame : Window
     {
+        public string gamerChoosen;
+        public int wins = 0;
+        public int loses = 0;
         public RockPaperScissorsGame()
         {
-            InitializeComponent();            
-            string[] variant = new string[3];
-            variant[1] = "rock";
-            variant[2] = "paper";
-            variant[3] = "scissors";
-           
+            InitializeComponent();
+
         }
 
-        private void Result(string[] variant, string gamerChoosen)
-        {
+        private void Result(string gamerChoosen)
+        {           
+            string[] variant = new string[3];
+            variant[0] = "rock";
+            variant[1] = "paper";
+            variant[2] = "scissors";
             Random random = new Random();
             int variantBotInt = random.Next(3);
             string opponentVariant = variant[variantBotInt];
@@ -55,47 +58,57 @@ namespace ShitShit.Games
             }
             if (gamerChoosen == "rock" && opponentVariant == "paper" || gamerChoosen == "paper" && opponentVariant == "scissors" || gamerChoosen == "scissors" && opponentVariant == "rock")
             {
+                loses++;
                 MessageBox.Show("LOSE!!", "Result", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             if (gamerChoosen == "rock" && opponentVariant == "scissors" || gamerChoosen == "paper" && opponentVariant == "rock" || gamerChoosen == "scissors" && opponentVariant == "paper")
             {
+                wins++;
                 MessageBox.Show("WIN!!", "Result", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+            tbLoses.Text = Convert.ToString(loses);
+            tbWins.Text = Convert.ToString(wins);
         }
-        private string GamerChoosenRock()
-        {
-            string gamerChoosen = "rock";
-            var uri = new Uri("/MyImages/rock_icon.png", UriKind.Relative);
-            imageChoosen.Source = new BitmapImage(uri);
-            return gamerChoosen;
-        }
-        private string GamerChoosenPapper()
-        {
-            string gamerChoosen = "paper";
-            var uriOne = new Uri("/MyImages/paper_icon.png", UriKind.Relative);
-            imageChoosen.Source = new BitmapImage(uriOne);
-            return gamerChoosen;
-        }
-        private string GamerChoosenRockScissors()
-        {
-            string gamerChoosen = "scissors";
-            var uriTwo = new Uri("/MyImages/scissors_icon.png", UriKind.Relative);
-            imageChoosen.Source = new BitmapImage(uriTwo);
-            return gamerChoosen;
-        }
+
         private void btnRock_Click(object sender, RoutedEventArgs e)
         {
-            GamerChoosenRock();
+            gamerChoosen = "rock";
+            var uri = new Uri("/MyImages/rock_icon.png", UriKind.Relative);
+            imageChoosen.Source = new BitmapImage(uri);
+            Result(gamerChoosen);
         }
 
         private void btnPaper_Click(object sender, RoutedEventArgs e)
         {
-            GamerChoosenPapper();
+            gamerChoosen = "paper";
+            var uriOne = new Uri("/MyImages/paper_icon.png", UriKind.Relative);
+            imageChoosen.Source = new BitmapImage(uriOne);
+            Result(gamerChoosen);
         }
 
         private void btnScissors_Click(object sender, RoutedEventArgs e)
         {
-            GamerChoosenRockScissors();
+            gamerChoosen = "scissors";
+            var uriTwo = new Uri("/MyImages/scissors_icon.png", UriKind.Relative);
+            imageChoosen.Source = new BitmapImage(uriTwo);
+            Result(gamerChoosen);
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            ToolsForms.GamesWindow gamesWindow = new ToolsForms.GamesWindow();
+            gamesWindow.Show();
+            Close();
+        }
+
+        private void btnRefreash_Click(object sender, RoutedEventArgs e)
+        {
+            imageChoosen.Source = null;
+            imageOpponentChoosen.Source = null;
+            //Games.RockPaperScissorsGame rockPaperScissorsGame = new RockPaperScissorsGame();
+            //Application.Current.MainWindow = rockPaperScissorsGame;
+            //rockPaperScissorsGame.Show();
+            //this.Close();
         }
     }
 }

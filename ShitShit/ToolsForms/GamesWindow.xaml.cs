@@ -23,5 +23,17 @@ namespace ShitShit.ToolsForms
         {
             InitializeComponent();
         }
+
+        private void btnGameRPS_Click(object sender, RoutedEventArgs e)
+        {
+            Games.RockPaperScissorsGame rockPaperScissorsGame = new Games.RockPaperScissorsGame();
+            rockPaperScissorsGame.Show();
+            Close();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();    
+        }
     }
 }
