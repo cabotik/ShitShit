@@ -17,6 +17,7 @@
     <None Remove="MyImages\fear_icon.png" />
     <None Remove="MyImages\flappyGameBG.png" />
     <None Remove="MyImages\flappyghostgame_icon.png" />
+    <None Remove="MyImages\flyghost_icon.png" />
     <None Remove="MyImages\food_icon.png" />
     <None Remove="MyImages\game_icon.png" />
     <None Remove="MyImages\grave_icon.png" />
@@ -69,6 +70,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\flappyghostgame_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\flyghost_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\food_icon.png">

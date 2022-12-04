@@ -19,7 +19,7 @@
         <Image Width="135" Height="266" Source="/MyImages/column_icon.png" Tag="obs3" Canvas.Left="375" Canvas.Top="220"/>
         <Image Width="135" Height="266" Source="/MyImages/column_icon.png" Tag="obs3" Canvas.Left="375" Canvas.Top="-200"/>
 
-        <Image Name="imageFlappyGhost" Height="50" Width="50" Stretch="Fill" Canvas.Top="190" Canvas.Left="10" Source="/MyImages/veryhappyghost_icon.png"/>
+        <Image Name="imageFlappyGhost" Height="50" Width="50" Stretch="Fill" Canvas.Top="190" Canvas.Left="10" Source="/MyImages/flyghost_icon.png"/>
         <TextBlock Margin="5" FontSize="15" Name="tbScore"  Foreground="White"/>
     </Canvas>
 </Window>
