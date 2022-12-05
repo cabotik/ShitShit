@@ -19,6 +19,7 @@
     <None Remove="MyImages\catchbonesgame_icon.png" />
     <None Remove="MyImages\column_icon.png" />
     <None Remove="MyImages\cowskull_icon.png" />
+    <None Remove="MyImages\crossbones_icon.png" />
     <None Remove="MyImages\fear_icon.png" />
     <None Remove="MyImages\flappyGameBG.png" />
     <None Remove="MyImages\flappyghostgame_icon.png" />
@@ -46,6 +47,7 @@
     <None Remove="MyImages\sleepghost.png" />
     <None Remove="MyImages\sleep_icon.png" />
     <None Remove="MyImages\soul_icon.png" />
+    <None Remove="MyImages\tictactoegame_icon.png" />
     <None Remove="MyImages\veryhappyghost_icon.png" />
   </ItemGroup>
 
@@ -85,6 +87,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\cowskull_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\crossbones_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\fear_icon.png">
@@ -166,6 +171,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\soul_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\tictactoegame_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\veryhappyghost_icon.png">

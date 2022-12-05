@@ -49,5 +49,12 @@ namespace ShitShit.ToolsForms
             catchBonesGame.Show();
             Close();
         }
+
+        private void btnGameTTT_Click(object sender, RoutedEventArgs e)
+        {
+            Games.TicTacToeGame ticTacToeGame = new Games.TicTacToeGame();
+            ticTacToeGame.Show();
+            Close();
+        }
     }
 }

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShitShit.Games"
         mc:Ignorable="d"
+        Icon="/MyImages/catchbonesgame_icon.png"
         Title="Catch Bones Game" MinHeight="700" MinWidth="525" MaxHeight="700" MaxWidth="525">
     <Canvas Name="cvCatchBones" Focusable="True" MouseMove="cvCatchBones_MouseMove" KeyDown="cvCatchBones_KeyDown">
         <Canvas.Background>
