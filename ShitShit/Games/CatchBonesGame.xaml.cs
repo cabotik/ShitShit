@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -38,8 +39,9 @@ namespace ShitShit.Games
             timer.Tick += GameEngine;
             timer.Interval = TimeSpan.FromMilliseconds(20);
             timer.Start();
-            var uriLeft = new Uri("/MyImages/leftbasket_icon.png", UriKind.Relative);
-            imageBasket.ImageSource = new BitmapImage(uriLeft);
+            imageBasket.ImageSource = new BitmapImage(new Uri("pack://application:,,,/MyImages/leftbasket_icon.png"));
+            //var uriLeft = new Uri("\\MyImages\\leftbasket_icon.png", UriKind.Relative);
+            //imageBasket.ImageSource = new BitmapImage(uriLeft);
             rPlayer.Fill = imageBasket;
         }
 
@@ -80,14 +82,23 @@ namespace ShitShit.Games
             }
             if (score > 10)
             {
+                itemSpeed = 12;
+            }
+            if (score > 100)
+            {
+                itemSpeed = 16;
+            }
+            if (score > 500)
+            {
                 itemSpeed = 20;
             }
             if (missed > 10)
             {
                 timer.Stop();
-                MessageBox.Show("You lost!" + Environment.NewLine + "You Scored: " + score + Environment.NewLine + "Click ok to play again.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("You lost!" + Environment.NewLine + "You Scored: " + score + Environment.NewLine + "Click ok to play again. Press esc for exit", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 ResetGame();
             }
+            
         }
 
 
@@ -98,30 +109,30 @@ namespace ShitShit.Games
             Canvas.SetLeft(rPlayer, px - 10);
             if (Canvas.GetLeft(rPlayer) < 260)
             {
-                imageBasket.ImageSource = new BitmapImage(new Uri("/MyImages/leftbasket_icon.png"));
+                imageBasket.ImageSource = new BitmapImage(new Uri("pack://application:,,,/MyImages/leftbasket_icon.png"));
             }
             else 
             {
-                imageBasket.ImageSource = new BitmapImage(new Uri("/MyImages/rightbasket_icon.png"));
+                imageBasket.ImageSource = new BitmapImage(new Uri("pack://application:,,,/MyImages/rightbasket_icon.png"));
             }
         }
         private void MakeBones()
         { 
             ImageBrush bones= new ImageBrush();
-            int ra = random.Next(1,4);
+            int ra = random.Next(1,5);
             switch (ra)
             {
                 case 1:
-                    bones.ImageSource = new BitmapImage(new Uri("/MyImages/bonesOne_icon.png"));
+                    bones.ImageSource = new BitmapImage(new Uri("pack://application:,,,/MyImages/bonesOne_icon.png"));
                     break;
                 case 2:
-                    bones.ImageSource = new BitmapImage(new Uri("/MyImages/bonesTwo_icon.png"));
+                    bones.ImageSource = new BitmapImage(new Uri("pack://application:,,,/MyImages/bonesTwo_icon.png"));
                     break;
                 case 3:
-                    bones.ImageSource = new BitmapImage(new Uri("/MyImages/skull_icon.png"));
+                    bones.ImageSource = new BitmapImage(new Uri("pack://application:,,,/MyImages/skull_icon.png"));
                     break;
                 case 4:
-                    bones.ImageSource = new BitmapImage(new Uri("/MyImages/cowskull_icon.png"));
+                    bones.ImageSource = new BitmapImage(new Uri("pack://application:,,,/MyImages/cowskull_icon.png"));
                     break;
             }
             Rectangle newRec = new Rectangle
@@ -132,7 +143,7 @@ namespace ShitShit.Games
                 Fill = bones
             };
             Canvas.SetLeft(newRec, random.Next(10,450));
-            Canvas.SetTop(newRec, random.Next(60, 150 * -1));
+            Canvas.SetTop(newRec, random.Next(60, 150) * -1);
             cvCatchBones.Children.Add(newRec); 
         }
         private void ResetGame()
@@ -141,6 +152,16 @@ namespace ShitShit.Games
             Application.Current.MainWindow =catchBonesGame;
             catchBonesGame.Show();
             this.Close();
+        }
+
+        private void cvCatchBones_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                ToolsForms.GamesWindow gamesWindow = new ToolsForms.GamesWindow();
+                gamesWindow.Show();
+                Close();
+            }
         }
     }
 }

@@ -161,7 +161,7 @@
         <StackPanel Name="spBlack" Grid.ColumnSpan="3" Grid.RowSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
             <Image x:Name="imageBlack" Width="1200" Height="1000" Source="/MyImages/black.png" Opacity="0.6" />
         </StackPanel>
-        <StackPanel Name="spNormal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+        <StackPanel MouseDown="spGhost_MouseDown" Name="spGhost" Grid.Row="1"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
             <Image Name="imageGhost" Width="300" Height="300" Margin="10" />
         </StackPanel>
         <StackPanel Name="spbtnLightOff" Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">

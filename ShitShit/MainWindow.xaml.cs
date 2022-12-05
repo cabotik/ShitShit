@@ -173,7 +173,7 @@ namespace ShitShit
 
         private void btnEatSoul_Click(object sender, RoutedEventArgs e)
         {
-            ghost.EatRatsSoul();
+            ghost.EatPersonsSoul();
             PersentReturn();
             GhostCheck();
             spFoodChoose.Visibility = Visibility.Hidden;
@@ -201,6 +201,14 @@ namespace ShitShit
             PersentReturn();
             GhostCheck();
             spGameChoose.Visibility = Visibility.Hidden;
+        }
+
+        private void spGhost_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var uriveryHappy = new Uri("/MyImages/veryhappyghost_icon.png", UriKind.Relative);
+            imageGhost.Source = new BitmapImage(uriveryHappy);
+            Thread.Sleep(1000);
+            GhostCheck();
         }
 
     }

@@ -73,7 +73,7 @@ namespace ShitShit.Games
             }
             if (e.Key == Key.R && gameOver == true)
             { StartGame(); }
-            if (e.Key == Key.T)
+            if (e.Key == Key.Escape)
             {
                 ToolsForms.GamesWindow gamesWindow = new ToolsForms.GamesWindow();
                 gamesWindow.Show();
