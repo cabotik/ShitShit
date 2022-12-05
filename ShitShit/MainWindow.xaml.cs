@@ -24,9 +24,7 @@ namespace ShitShit
     public partial class MainWindow : Window
     {
         Ghost ghost = new Ghost();
-        //DispatcherTimer dispatcherTimerVP = new DispatcherTimer();
-
-
+        DispatcherTimer dispatcherTimerVp = new DispatcherTimer();
         public MainWindow()
         {        
             InitializeComponent();
@@ -35,40 +33,47 @@ namespace ShitShit
             var uriCandleOn = new Uri("/MyImages/candleskull_icon.png", UriKind.Relative);
             imageCandle.Source = new BitmapImage(uriCandleOn);
             ghost.TimerForChangeParameters();
-            
-        }
-        //private void TimarForChangeghostPic()
-        //{
+            TimerForViewPersents();
 
-        //    dispatcherTimerVP.Tick += new EventHandler(dispatcherTimer_Tick);
-        //    dispatcherTimerVP.Interval = new TimeSpan(0, 0, 0, 0, 1000);
-        //    dispatcherTimerVP.Start();
-        //}
+
+        }
+        private void TimerForViewPersents()
+        {
+            dispatcherTimerVp.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimerVp.Interval = new TimeSpan(0, 0, 0, 0, 2000); 
+            dispatcherTimerVp.Start();
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            PersentReturn();
+            GhostCheck();
+        }
+
         private void GhostCheck()
         {
+            if (ghost.Health <= 0 || ghost.Food <= 0 || ghost.Happy <= 0 || ghost.Sleep <= 0)
+            {
+                MessageBox.Show("You can't kill ghost, but he got offended and left!", "You failed...", MessageBoxButton.OK, MessageBoxImage.Warning);
+                Close();
+            }
             if (ghost.Health >= 60 || ghost.Food >= 60 || ghost.Happy >= 60 || ghost.Sleep >= 60)
             {
                 var uriHappy = new Uri("/MyImages/happyghost_icon.png", UriKind.Relative);
                 imageGhost.Source = new BitmapImage(uriHappy);
+            }
+            if (ghost.Health <= 50 && ghost.Health >= 30 || ghost.Food <= 50 && ghost.Food >= 30 || ghost.Happy <= 50 && ghost.Happy >= 30 || ghost.Sleep <= 50 && ghost.Sleep >= 30)
+            {
+                var uriNormal = new Uri("/MyImages/normalghost_icon.png", UriKind.Relative);
+                imageGhost.Source = new BitmapImage(uriNormal);
             }
             if (ghost.Health <= 20 || ghost.Food <= 20 || ghost.Happy <= 20 || ghost.Sleep <= 20)
             {
                 var uriSad = new Uri("/MyImages/sadghost_icon.png", UriKind.Relative);
                 imageGhost.Source = new BitmapImage(uriSad);
             }
-            if ( ghost.Health <= 50 && ghost.Health >= 30|| ghost.Food <= 50 && ghost.Food >= 30 || ghost.Happy <= 50 && ghost.Happy >= 30 || ghost.Sleep <= 50 && ghost.Sleep >= 30)
-            {
-                var uriNormal = new Uri("/MyImages/normalghost_icon.png", UriKind.Relative);
-                imageGhost.Source = new BitmapImage(uriNormal);
-            }
 
         }
-        //private void dispatcherTimer_Tick(object sender, EventArgs e)
-        //{
-        //    var uriVeryHappy = new Uri("/MyImages/veryhappyghost_icon.png", UriKind.Relative);
-        //    imageGhost.Source = new BitmapImage(uriVeryHappy);
-        //}
-
         public void PersentReturn()
         {
             tbFoodPercent.Text = $"{Convert.ToString(ghost.FoodReturn())}%";
