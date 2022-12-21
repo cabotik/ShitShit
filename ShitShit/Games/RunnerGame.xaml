@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ShitShit.Games"
         mc:Ignorable="d"
         Icon="/MyImages/runnergame_icon.png"
-        Title="Runner Game" MinHeight="450" MinWidth="800" MaxHeight="450" MaxWidth="800">
+        Title="Runner Game" MinHeight="450" MinWidth="800" MaxHeight="400" MaxWidth="700">
     <Canvas Name ="cvRG" Focusable="True" KeyDown="cvRG_KeyDown" KeyUp="cvRG_KeyUp" Background="LightBlue">
         
         <Rectangle Name="bg" Height="400" Width="1260" Fill="PaleVioletRed" Canvas.Left="0"/>
