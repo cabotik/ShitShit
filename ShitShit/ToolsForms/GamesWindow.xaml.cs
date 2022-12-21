@@ -56,5 +56,12 @@ namespace ShitShit.ToolsForms
             ticTacToeGame.Show();
             Close();
         }
+
+        private void btnGameRunner_Click(object sender, RoutedEventArgs e)
+        {
+            Games.RunnerGame runnerGame = new Games.RunnerGame();
+            runnerGame.Show();
+            Close();
+        }
     }
 }

@@ -41,6 +41,9 @@
     <None Remove="MyImages\rightbasket_icon.png" />
     <None Remove="MyImages\rockPaperScissors_icon.png" />
     <None Remove="MyImages\rock_icon.png" />
+    <None Remove="MyImages\ruincolumn_icoon.png" />
+    <None Remove="MyImages\rungamebg.png" />
+    <None Remove="MyImages\runnergame_icon.png" />
     <None Remove="MyImages\sadghost_icon.png" />
     <None Remove="MyImages\scissors_icon.png" />
     <None Remove="MyImages\skull_icon.png" />
@@ -153,6 +156,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\rock_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\ruincolumn_icoon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\rungamebg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MyImages\runnergame_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="MyImages\sadghost_icon.png">

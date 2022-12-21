@@ -21,6 +21,8 @@ namespace ShitShit.Games
     /// </summary>
     public partial class CatchBonesGame : Window
     {
+        int record;
+        int records;
         int maxItems= 5;
         int currentItems = 0;
         int score = 0;
@@ -49,6 +51,7 @@ namespace ShitShit.Games
         {
             tbScore.Text = "Caught: " + score.ToString();
             tbMissed.Text = "Missed: " + missed.ToString();
+            //tbRecord.Text = "Record:" + records.ToString();
             if (currentItems < maxItems)
             {
                 MakeBones();
@@ -95,6 +98,7 @@ namespace ShitShit.Games
             if (missed > 10)
             {
                 timer.Stop();
+                record = score;
                 MessageBox.Show("You lost!" + Environment.NewLine + "You Scored: " + score + Environment.NewLine + "Click ok to play again. Press esc for exit", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 ResetGame();
             }
@@ -148,10 +152,12 @@ namespace ShitShit.Games
         }
         private void ResetGame()
         {
-            Games.CatchBonesGame catchBonesGame= new Games.CatchBonesGame();
-            Application.Current.MainWindow =catchBonesGame;
+
+            Games.CatchBonesGame catchBonesGame = new Games.CatchBonesGame();
+            Application.Current.MainWindow = catchBonesGame;
             catchBonesGame.Show();
             this.Close();
+
         }
 
         private void cvCatchBones_KeyDown(object sender, KeyEventArgs e)

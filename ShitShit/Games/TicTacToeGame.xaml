@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ShitShit.Games"
         mc:Ignorable="d"
         Icon="/MyImages/tictactoegame_icon.png"
-        Title="Tic Tac Toe Game" MinHeight="500" MinWidth="500" MaxHeight="500" MaxWidth="500">
+        Title="Tic Tac Toe Game" MinHeight="510" MinWidth="500" MaxHeight="510" MaxWidth="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -22,10 +22,13 @@
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
         </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/MyImages/flappyGameBG.png"/>
+        </Grid.Background>
         <StackPanel Grid.Row="4" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Margin="5" BorderThickness="0" Background="White" Name="btnBack" Click="btnBack_Click">
+            <Button Margin="5" BorderThickness="0" Background="Transparent" Name="btnBack" Click="btnBack_Click">
                 <StackPanel>
-                    <Image Width="30" Height="40" Source="/MyImages/back_icon.png"/>
+                    <Image Width="30" Height="30" Source="/MyImages/back_icon.png"/>
                 </StackPanel>
             </Button>
         </StackPanel>
@@ -36,9 +39,72 @@
             <TextBlock Margin="5" Name="tbLoses"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Margin="5" BorderThickness="0" Background="White" Name="btnRefresh" Click="btnRefresh_Click">
+            <Button Margin="5" BorderThickness="0" Background="Transparent" Name="btnRefresh" Click="btnRefresh_Click">
                 <StackPanel>
-                    <Image Width="30" Height="40" Source="/MyImages/refreash_icon.png"/>
+                    <Image Width="30" Height="30" Source="/MyImages/refreash_icon.png"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Background="Transparent" BorderBrush="LightGreen" Width="90" Height="90" Margin="5" Name="bntOneOne" Click="bntOneOne_Click">
+                <StackPanel>
+                    <Image Width="90" Height="90" Name="ImageOneOne"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Background="Transparent" BorderBrush="LightGreen" Width="90" Height="90" Margin="5" Name="bntOneTwo" Click="bntOneTwo_Click">
+                <StackPanel>
+                    <Image Width="90" Height="90" Name="ImageOneTwo"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Background="Transparent" BorderBrush="LightGreen" Width="90" Height="90" Margin="5" Name="bntOneThree" Click="bntOneThree_Click">
+                <StackPanel>
+                    <Image Width="90" Height="90" Name="ImageOneThree"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Background="Transparent" BorderBrush="LightGreen" Width="90" Height="90" Margin="5" Name="bntTwoOne" Click="bntTwoOne_Click">
+                <StackPanel>
+                    <Image Width="90" Height="90" Name="ImageTwoOne"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Background="Transparent" BorderBrush="LightGreen" Width="90" Height="90" Margin="5" Name="bntTwoTwo" Click="bntTwoTwo_Click">
+                <StackPanel>
+                    <Image Width="90" Height="90" Name="ImageTwoTwo"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Background="Transparent" BorderBrush="LightGreen" Width="90" Height="90" Margin="5" Name="bntTwoThree" Click="bntTwoThree_Click">
+                <StackPanel>
+                    <Image Width="90" Height="90" Name="ImageTwoThree"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Background="Transparent" BorderBrush="LightGreen" Width="90" Height="90" Margin="5" Name="bntThreeOne" Click="bntThreeOne_Click" >
+                <StackPanel>
+                    <Image Width="90" Height="90" Name="ImageThreeOne"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Background="Transparent" BorderBrush="LightGreen" Width="90" Height="90" Margin="5" Name="bntThreeTwo" Click="bntThreeTwo_Click">
+                <StackPanel>
+                    <Image Width="90" Height="90" Name="ImageThreeTwo"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Background="Transparent" BorderBrush="LightGreen" Width="90" Height="90" Margin="5" Name="bntThreeThree" Click="bntThreeThree_Click">
+                <StackPanel>
+                    <Image Width="90" Height="90" Name="ImageThreeThree"/>
                 </StackPanel>
             </Button>
         </StackPanel>

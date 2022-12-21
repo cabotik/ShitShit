@@ -33,6 +33,11 @@
                     <Image Width="80" Height="80" Source="/MyImages/tictactoegame_icon.png"/>
                 </StackPanel>
             </Button>
+            <Button Margin="5" BorderThickness="0" Background="White" Name="btnGameRunner" Click="btnGameRunner_Click">
+                <StackPanel>
+                    <Image Width="80" Height="80" Source="/MyImages/runnergame_icon.png"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             <Button Margin="5" BorderThickness="0" Background="White" Name="btnBack" Click="btnBack_Click">

@@ -103,22 +103,23 @@ namespace ShitShit
                 imageGhost.Source = new BitmapImage(uriSleep);
                 for (int i = 10; i > 0; i--)
                 {
-                    pbSleep.Value++;
+                    
                     ghost.Sleep = 100;
                     Thread.Sleep(1000);
                 }
+                GhostCheck();
+                PersentReturn();
                 spBlack.Visibility = Visibility.Hidden;
                 var uriCandleOn = new Uri("/MyImages/candleskull_icon.png", UriKind.Relative);
                 imageCandle.Source = new BitmapImage(uriCandleOn);
-                GhostCheck();
-                PersentReturn();
                 return;
             }
             else
             {
                 MessageBox.Show("Ghost doesn't want to sleep!", "Message", MessageBoxButton.OK, MessageBoxImage.Information); 
             }           
-        }       
+        }
+
         private void btnHealth_Click(object sender, RoutedEventArgs e)
         {
             if (ghost.HealthReturn() < 90)

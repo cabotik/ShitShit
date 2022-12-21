@@ -31,7 +31,7 @@ namespace ShitShit.Games
             InitializeComponent();
             timer.Tick += Timer_Tick;
             timer.Interval = TimeSpan.FromMilliseconds(20);
-            MessageBox.Show("Space for control. For exit press T.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Space for control. For exit press esc.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             Thread.Sleep(1000);
             StartGame();
         }
