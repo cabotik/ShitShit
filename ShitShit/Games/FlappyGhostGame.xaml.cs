@@ -22,6 +22,7 @@ namespace ShitShit.Games
     public partial class FlappyGhostGame : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
+        int records;
         int score;
         int gravity = 8;
         bool gameOver;
@@ -33,12 +34,14 @@ namespace ShitShit.Games
             timer.Interval = TimeSpan.FromMilliseconds(20);
             MessageBox.Show("Space for control. For exit press esc.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             Thread.Sleep(1000);
+            records = Properties.Settings.Default.lastscoreFG;
             StartGame();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             tbScore.Text = "Score:" + score.ToString();
+            tbRecord.Text = "Last score:" + records.ToString();
             flappyGhostHitBox = new Rect(Canvas.GetLeft(imageFlappyGhost), Canvas.GetTop(imageFlappyGhost),imageFlappyGhost.Width - 12, imageFlappyGhost.Height);
             Canvas.SetTop(imageFlappyGhost, Canvas.GetTop(imageFlappyGhost) + gravity);
             if (Canvas.GetTop(imageFlappyGhost) < -30 || Canvas.GetTop(imageFlappyGhost) + imageFlappyGhost.Height > 460)
@@ -113,6 +116,8 @@ namespace ShitShit.Games
         {
             timer.Stop();
             gameOver = true;
+            Properties.Settings.Default.lastscoreFG = score;
+            Properties.Settings.Default.Save();
             tbScore.Text += "GAME OVER! Press R to restart";
         }
     }

@@ -21,5 +21,6 @@
 
         <Image Name="imageFlappyGhost" Height="50" Width="50" Stretch="Fill" Canvas.Top="190" Canvas.Left="10" Source="/MyImages/flyghost_icon.png"/>
         <TextBlock Margin="5" FontSize="15" Name="tbScore"  Foreground="White"/>
+        <TextBlock Margin="5" FontSize="15" Name="tbRecord"  Foreground="White" Canvas.Bottom="10"/>
     </Canvas>
 </Window>

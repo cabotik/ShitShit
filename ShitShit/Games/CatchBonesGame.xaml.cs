@@ -21,7 +21,6 @@ namespace ShitShit.Games
     /// </summary>
     public partial class CatchBonesGame : Window
     {
-        int record;
         int records;
         int maxItems= 5;
         int currentItems = 0;
@@ -34,6 +33,7 @@ namespace ShitShit.Games
         int itemSpeed = 10;
         ImageBrush imageBasket = new ImageBrush();
         
+        
         public CatchBonesGame()
         {
             InitializeComponent();
@@ -45,13 +45,14 @@ namespace ShitShit.Games
             //var uriLeft = new Uri("\\MyImages\\leftbasket_icon.png", UriKind.Relative);
             //imageBasket.ImageSource = new BitmapImage(uriLeft);
             rPlayer.Fill = imageBasket;
+            records = Properties.Settings.Default.lastscoreCB;
         }
 
         private void GameEngine(object sender, EventArgs e)
         {
             tbScore.Text = "Caught: " + score.ToString();
             tbMissed.Text = "Missed: " + missed.ToString();
-            //tbRecord.Text = "Record:" + records.ToString();
+            tbRecord.Text = "Last score:" + records.ToString();
             if (currentItems < maxItems)
             {
                 MakeBones();
@@ -98,7 +99,8 @@ namespace ShitShit.Games
             if (missed > 10)
             {
                 timer.Stop();
-                record = score;
+                Properties.Settings.Default.lastscoreCB = score;
+                Properties.Settings.Default.Save();
                 MessageBox.Show("You lost!" + Environment.NewLine + "You Scored: " + score + Environment.NewLine + "Click ok to play again. Press esc for exit", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 ResetGame();
             }

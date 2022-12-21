@@ -134,10 +134,10 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Label Content="Play with bones +30" Foreground="White"/>
+                    <Label Content="Play with bones +10" Foreground="White"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Label Content="Play with rats +30" Foreground="White"/>
+                    <Label Content="Play with rats +20" Foreground="White"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Label Content="Play with person +30" Foreground="White"/>

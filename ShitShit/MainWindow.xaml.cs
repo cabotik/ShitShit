@@ -34,7 +34,12 @@ namespace ShitShit
             imageCandle.Source = new BitmapImage(uriCandleOn);
             ghost.TimerForChangeParameters();
             TimerForViewPersents();
-
+            ghost.Sleep = Properties.Settings.Default.sleep;
+            ghost.Happy = Properties.Settings.Default.happy;
+            ghost.Health = Properties.Settings.Default.health;
+            ghost.Food = Properties.Settings.Default.food;
+            ghost.Name = Properties.Settings.Default.name;
+            
 
         }
         private void TimerForViewPersents()
@@ -46,8 +51,14 @@ namespace ShitShit
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
+            Properties.Settings.Default.health = ghost.Health;
+            Properties.Settings.Default.happy = ghost.Happy;
+            Properties.Settings.Default.food = ghost.Food;
+            Properties.Settings.Default.sleep = ghost.Sleep;
+            Properties.Settings.Default.Save();
             PersentReturn();
             GhostCheck();
+
         }
 
         private void GhostCheck()
@@ -72,7 +83,7 @@ namespace ShitShit
                 var uriSad = new Uri("/MyImages/sadghost_icon.png", UriKind.Relative);
                 imageGhost.Source = new BitmapImage(uriSad);
             }
-
+            
         }
         public void PersentReturn()
         {
@@ -154,6 +165,8 @@ namespace ShitShit
                 Name = tbAddGhostName.Text;
                 tbGhostName.Text = Name;
                 spName.Visibility = Visibility.Hidden;
+                Properties.Settings.Default.name = ghost.Name;
+                Properties.Settings.Default.Save();
             }
             catch (Exception ex)
             {

@@ -11,10 +11,10 @@ namespace ShitShit
     {
 
         public string Name { get; set; }
-        public int Food = 100;
+        public int Food = 50;
         public int Sleep = 50;
-        public int Health = 100;
-        public int Happy = 100;
+        public int Health = 50;
+        public int Happy = 50;
         public int EatFear()
         {  return Food = Food + 10; }
         public int EatPersonsSoul()
@@ -41,7 +41,7 @@ namespace ShitShit
         {
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 120000); ///120 000
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 60000); ///120 000
             dispatcherTimer.Start();
         }
         private void dispatcherTimer_Tick(object sender, EventArgs e)
