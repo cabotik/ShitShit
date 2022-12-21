@@ -23,6 +23,8 @@
         <Grid.Background>
             <ImageBrush ImageSource="/MyImages/flappyGameBG.png" />
         </Grid.Background>
+
+        <!--Stack Panel with percents and general buttons-->
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Margin="5" Name="btnFood" Background="Transparent" Click="btnFood_Click" BorderThickness="0">
                 <StackPanel>
@@ -49,10 +51,9 @@
             </Button>
             <TextBlock Margin="5" Name="tbHappyPercent" Width="30" Foreground="White"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
-            <ProgressBar Name="pbSleep" Width="200" Height="30"  Minimum="0" Maximum="10"/>
-        </StackPanel> 
-            <StackPanel Grid.Row="2" Grid.Column="1" Name="spFoodChoose" Visibility="Hidden">
+
+        <!--Stack Panel for choosen food-->
+        <StackPanel Grid.Row="2" Grid.Column="1" Name="spFoodChoose" Visibility="Hidden">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -98,6 +99,8 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
+
+        <!--Stack Panel for choosen game-->
         <StackPanel Name="spGameChoose" Grid.Row="2" Grid.Column="1" Visibility="Hidden">
             <Grid>
                 <Grid.RowDefinitions>
@@ -144,6 +147,8 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
+
+        <!--Stack Panel for games button-->
         <StackPanel  Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Margin="5" Name="btnGames" Background="Transparent" Click="btnGames_Click" BorderThickness="0">
                 <StackPanel>
@@ -151,13 +156,18 @@
                 </StackPanel>
             </Button>
         </StackPanel>
+
+        <!--All For Name-->
         <StackPanel Name="spName" Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
             <TextBox Margin="5" Width="80" Name="tbAddGhostName" />
             <Button Margin="5" Width="70" Name="btnAddName" Click="btnAddName_Click" Background="White" BorderThickness="0" Content="Add Name"/>
         </StackPanel>
+               
         <StackPanel  Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Margin="5" Width="100" Name="tbGhostName" FontSize="30" VerticalAlignment="Bottom" Foreground="White"/>
         </StackPanel>
+
+        <!--All For Slepp-->
         <StackPanel Name="spBlack" Grid.ColumnSpan="3" Grid.RowSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
             <Image x:Name="imageBlack" Width="1200" Height="1000" Source="/MyImages/black.png" Opacity="0.6" />
         </StackPanel>

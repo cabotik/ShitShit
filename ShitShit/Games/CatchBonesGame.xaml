@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Icon="/MyImages/catchbonesgame_icon.png"
         Title="Catch Bones Game" MinHeight="700" MinWidth="525" MaxHeight="700" MaxWidth="525">
-    <Canvas Name="cvCatchBones" Focusable="True" MouseMove="cvCatchBones_MouseMove" KeyDown="cvCatchBones_KeyDown">
+    <Canvas Name="cvCatchBones" Focusable="True" MouseMove="cvCatchBones_MouseMove" KeyDown="cvCatchBones_KeyDown" KeyUp="cvCatchBones_KeyUp">
         <Canvas.Background>
             <ImageBrush ImageSource="/MyImages/flappyGameBG.png"/>
         </Canvas.Background>
         <TextBlock Name="tbScore" FontSize="18" Foreground="White"/>
-        <TextBlock Name="tbRecord" FontSize="18" Foreground="White"  Canvas.Left="200"/>
+        <TextBlock Name="tbRecord" FontSize="18" Foreground="White" Canvas.Left="200" Canvas.Bottom="600"/>
         <TextBlock Name="tbMissed" FontSize="18" Foreground="White" Canvas.Left="390"/>
         <Rectangle Name="rPlayer" Width="80" Height="80" Canvas.Left="215" Canvas.Top="590" Fill="PaleVioletRed"/>
 

@@ -37,9 +37,12 @@ namespace ShitShit.Games
         public CatchBonesGame()
         {
             InitializeComponent();
+
             cvCatchBones.Focus();
             timer.Tick += GameEngine;
             timer.Interval = TimeSpan.FromMilliseconds(20);
+            MessageBox.Show("Mouse for control. For exit press esc.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            Thread.Sleep(1000);
             timer.Start();
             imageBasket.ImageSource = new BitmapImage(new Uri("pack://application:,,,/MyImages/leftbasket_icon.png"));
             //var uriLeft = new Uri("\\MyImages\\leftbasket_icon.png", UriKind.Relative);
@@ -101,8 +104,8 @@ namespace ShitShit.Games
                 timer.Stop();
                 Properties.Settings.Default.lastscoreCB = score;
                 Properties.Settings.Default.Save();
-                MessageBox.Show("You lost!" + Environment.NewLine + "You Scored: " + score + Environment.NewLine + "Click ok to play again. Press esc for exit", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                ResetGame();
+                tbScore.Text += "GAME OVER! Press R to restart";
+               
             }
             
         }
@@ -152,16 +155,6 @@ namespace ShitShit.Games
             Canvas.SetTop(newRec, random.Next(60, 150) * -1);
             cvCatchBones.Children.Add(newRec); 
         }
-        private void ResetGame()
-        {
-
-            Games.CatchBonesGame catchBonesGame = new Games.CatchBonesGame();
-            Application.Current.MainWindow = catchBonesGame;
-            catchBonesGame.Show();
-            this.Close();
-
-        }
-
         private void cvCatchBones_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
@@ -170,6 +163,16 @@ namespace ShitShit.Games
                 gamesWindow.Show();
                 Close();
             }
+        }
+        private void cvCatchBones_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.R)
+            {
+                Games.CatchBonesGame catchBonesGame = new Games.CatchBonesGame();
+                //Application.Current.MainWindow = catchBonesGame;
+                catchBonesGame.Show();
+                this.Close();
+            }          
         }
     }
 }

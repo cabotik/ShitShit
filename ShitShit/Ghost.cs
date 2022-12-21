@@ -41,7 +41,7 @@ namespace ShitShit
         {
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 60000); ///120 000
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 60000); ///120 000 or 60000
             dispatcherTimer.Start();
         }
         private void dispatcherTimer_Tick(object sender, EventArgs e)

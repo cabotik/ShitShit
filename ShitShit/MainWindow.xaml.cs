@@ -38,9 +38,7 @@ namespace ShitShit
             ghost.Happy = Properties.Settings.Default.happy;
             ghost.Health = Properties.Settings.Default.health;
             ghost.Food = Properties.Settings.Default.food;
-            ghost.Name = Properties.Settings.Default.name;
-            
-
+            CheckName();
         }
         private void TimerForViewPersents()
         {
@@ -48,7 +46,15 @@ namespace ShitShit
             dispatcherTimerVp.Interval = new TimeSpan(0, 0, 0, 0, 2000); 
             dispatcherTimerVp.Start();
         }
-
+        private void CheckName()
+        {
+            if (Properties.Settings.Default.name != null)
+            {
+                tbGhostName.Text = Properties.Settings.Default.name;
+                spName.Visibility = Visibility.Hidden;
+            }
+            else { return; }
+        }
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             Properties.Settings.Default.health = ghost.Health;
@@ -65,8 +71,9 @@ namespace ShitShit
         {
             if (ghost.Health <= 0 || ghost.Food <= 0 || ghost.Happy <= 0 || ghost.Sleep <= 0)
             {
-                MessageBox.Show("You can't kill ghost, but he got offended and left!", "You failed...", MessageBoxButton.OK, MessageBoxImage.Warning);
-                Close();
+                MessageBox.Show("You can't kill ghost, but he got offended and left!", "You failed...", MessageBoxButton.OK, MessageBoxImage.Hand);
+                imageGhost.Visibility = Visibility.Hidden;
+                NewGhost();               
             }
             if (ghost.Health >= 60 || ghost.Food >= 60 || ghost.Happy >= 60 || ghost.Sleep >= 60)
             {
@@ -85,6 +92,26 @@ namespace ShitShit
             }
             
         }
+
+        private void NewGhost()
+        {
+            if (MessageBox.Show("Find a new ghost??", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                Properties.Settings.Default.name = null;
+                ghost.Health = 50;
+                ghost.Food = 50;
+                ghost.Happy = 50;
+                ghost.Sleep = 50;
+                imageGhost.Visibility = Visibility.Visible;
+                PersentReturn();
+                GhostCheck();
+            }
+            else
+            {
+                Close();
+            }
+        }
+
         public void PersentReturn()
         {
             tbFoodPercent.Text = $"{Convert.ToString(ghost.FoodReturn())}%";
@@ -150,30 +177,27 @@ namespace ShitShit
             }
             else { MessageBox.Show("Ghost is already happy!", "Message", MessageBoxButton.OK, MessageBoxImage.Information); }
         }
-
         private void btnGames_Click(object sender, RoutedEventArgs e)
         {
             ToolsForms.GamesWindow gamesWindow = new ToolsForms.GamesWindow();
             gamesWindow.Show();
         }
-
         private void btnAddName_Click(object sender, RoutedEventArgs e)
         {
-            Ghost ghostName = new Ghost();
-            try
+
+            if (String.IsNullOrEmpty(tbAddGhostName.Text))
+            {
+                MessageBox.Show("GIVE HIM ANY NAME!", "MESSAGE", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
             {
                 Name = tbAddGhostName.Text;
                 tbGhostName.Text = Name;
-                spName.Visibility = Visibility.Hidden;
                 Properties.Settings.Default.name = ghost.Name;
                 Properties.Settings.Default.Save();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+                spName.Visibility = Visibility.Hidden;
+            }           
         }
-
         private void btnEatFear_Click(object sender, RoutedEventArgs e)
         {
             ghost.EatFear();
@@ -181,7 +205,6 @@ namespace ShitShit
             GhostCheck();
             spFoodChoose.Visibility = Visibility.Hidden;
         }
-
         private void btnEatRatSoul_Click(object sender, RoutedEventArgs e)
         {
             ghost.EatRatsSoul();
@@ -189,7 +212,6 @@ namespace ShitShit
             GhostCheck();
             spFoodChoose.Visibility = Visibility.Hidden;
         }
-
         private void btnEatSoul_Click(object sender, RoutedEventArgs e)
         {
             ghost.EatPersonsSoul();
@@ -197,7 +219,6 @@ namespace ShitShit
             GhostCheck();
             spFoodChoose.Visibility = Visibility.Hidden;
         }
-
         private void btnPlayWithBouns_Click(object sender, RoutedEventArgs e)
         {
             ghost.PlayWithBones();
@@ -205,7 +226,6 @@ namespace ShitShit
             GhostCheck();
             spGameChoose.Visibility = Visibility.Hidden;
         }
-
         private void btnPlayWithRats_Click(object sender, RoutedEventArgs e)
         {
             ghost.PlayWithRats();
@@ -213,7 +233,6 @@ namespace ShitShit
             GhostCheck();
             spGameChoose.Visibility = Visibility.Hidden;
         }
-
         private void btnPlayWithPerson_Click(object sender, RoutedEventArgs e)
         {
             ghost.PlayWithPerson();
@@ -221,7 +240,6 @@ namespace ShitShit
             GhostCheck();
             spGameChoose.Visibility = Visibility.Hidden;
         }
-
         private void spGhost_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var uriveryHappy = new Uri("/MyImages/veryhappyghost_icon.png", UriKind.Relative);
@@ -229,6 +247,5 @@ namespace ShitShit
             Thread.Sleep(1000);
             GhostCheck();
         }
-
     }
 }
