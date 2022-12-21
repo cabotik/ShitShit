@@ -153,7 +153,7 @@
         </StackPanel>
         <StackPanel Name="spName" Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
             <TextBox Margin="5" Width="80" Name="tbAddGhostName" />
-            <Button Margin="5" Name="btnAddName" Click="btnAddName_Click" Background="White" BorderThickness="0" Content="Add Name"/>
+            <Button Margin="5" Width="70" Name="btnAddName" Click="btnAddName_Click" Background="White" BorderThickness="0" Content="Add Name"/>
         </StackPanel>
         <StackPanel  Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Margin="5" Width="100" Name="tbGhostName" FontSize="30" VerticalAlignment="Bottom" Foreground="White"/>

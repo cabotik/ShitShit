@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Icon="/MyImages/runnergame_icon.png"
         Title="Runner Game" MinHeight="450" MinWidth="800" MaxHeight="400" MaxWidth="700">
-    <Canvas Name ="cvRG" Focusable="True" KeyDown="cvRG_KeyDown" KeyUp="cvRG_KeyUp" Background="LightBlue">
+    <Canvas Name ="cvRG" Focusable="True" KeyDown="cvRG_KeyDown" KeyUp="cvRG_KeyUp" PreviewKeyDown="cvRG_PreviewKeyDown" Background="LightBlue">
         
         <Rectangle Name="bg" Height="400" Width="1260" Fill="PaleVioletRed" Canvas.Left="0"/>
         <Rectangle Name="secondBg" Height="400" Width="1260" Fill="AntiqueWhite" Canvas.Left="1262"/>
@@ -16,7 +16,7 @@
         
         <Rectangle Name="player" Height="95" Width="65" Fill="LightBlue"  Canvas.Top="150" Canvas.Left="110"/>
         
-        <Rectangle Name="obstacle" Height="180" Width="50" Fill="Bisque" Canvas.Top="300" Canvas.Left="720"/>
+        <Rectangle Name="obstacle" Height="180" Width="50" Fill="Bisque" Canvas.Top="280" Canvas.Left="720"/>
         
         <TextBlock Name="tbScore" FontSize="18" Foreground="White"/>
     </Canvas>

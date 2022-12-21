@@ -64,7 +64,7 @@ namespace ShitShit.Games
             Canvas.SetLeft(bg, 0);
             Canvas.SetLeft(secondBg, 1262);
 
-            Canvas.SetLeft(player, 110);
+            Canvas.SetLeft(player, 100);
             Canvas.SetTop(player, 140);
 
             Canvas.SetLeft(obstacle, 950);
@@ -152,6 +152,16 @@ namespace ShitShit.Games
                 force= 15;
                 speed = -12;
                 
+            }
+        }
+
+        private void cvRG_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                ToolsForms.GamesWindow gamesWindow = new ToolsForms.GamesWindow();
+                gamesWindow.Show();
+                Close();
             }
         }
     }
