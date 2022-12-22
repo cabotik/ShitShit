@@ -64,7 +64,6 @@ namespace ShitShit
             Properties.Settings.Default.Save();
             PersentReturn();
             GhostCheck();
-
         }
 
         private void GhostCheck()
@@ -89,8 +88,7 @@ namespace ShitShit
             {
                 var uriSad = new Uri("/MyImages/sadghost_icon.png", UriKind.Relative);
                 imageGhost.Source = new BitmapImage(uriSad);
-            }
-            
+            }           
         }
 
         private void NewGhost()
@@ -111,7 +109,6 @@ namespace ShitShit
                 Close();
             }
         }
-
         public void PersentReturn()
         {
             tbFoodPercent.Text = $"{Convert.ToString(ghost.FoodReturn())}%";
@@ -119,7 +116,6 @@ namespace ShitShit
             tbHealthPercent.Text = $"{Convert.ToString(ghost.HealthReturn())}%";
             tbSleepPercent.Text = $"{Convert.ToString(ghost.SleepReturn())}%";
         }
-
         private void btnFood_Click(object sender, RoutedEventArgs e)
         {
             if (ghost.FoodReturn() < 90)
@@ -128,7 +124,6 @@ namespace ShitShit
             }
             else { MessageBox.Show("Ghost is not hungry!", "Message", MessageBoxButton.OK, MessageBoxImage.Information); }
         }
-
         private void btnSleep_Click(object sender, RoutedEventArgs e)
         {
            
