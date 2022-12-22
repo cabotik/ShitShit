@@ -109,8 +109,6 @@ namespace ShitShit.Games
             }
             
         }
-
-
         private void cvCatchBones_MouseMove(object sender, MouseEventArgs e)
         {
             Point position = e.GetPosition(this);
